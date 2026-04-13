@@ -97,4 +97,8 @@ async function loginUserController(req, res) {
   });
 }
 
+const logoutUserController = async (req, res) => {
+  const token = req.cookies.token;
+};
+
 module.exports = { registerUserController, loginUserController };
