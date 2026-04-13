@@ -22,18 +22,20 @@ async function registerUserController(req, res) {
 
   //this 2 if statements are checking if the user with same email or username already exists in DB or not, if exists then it will return error message to the client
 
-  //username check
-  if (ifUserAlreadyExists.username == username) {
-    return res.status(400).json({
-      message: "User with this username already exists",
-    });
-  }
+  if (ifUserAlreadyExists) {
+    //username check
+    if (ifUserAlreadyExists.username == username) {
+      return res.status(400).json({
+        message: "User with this username already exists",
+      });
+    }
 
-  //email check
-  if (ifUserAlreadyExists.email == email) {
-    return res.status(400).json({
-      message: "User with this email already exists",
-    });
+    //email check
+    if (ifUserAlreadyExists.email == email) {
+      return res.status(400).json({
+        message: "User with this email already exists",
+      });
+    }
   }
 
   const hash = await bcrypt.hash(password, 10);
