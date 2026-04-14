@@ -5,6 +5,7 @@ const express=require("express");
 const authRouter=express.Router(); 
 this both way of writing makes the same thing*/
 
+const authMiddleware = require("../middlewares/auth.middleware");
 const authController = require("../controllers/auth.controller");
 
 /**
@@ -22,10 +23,21 @@ authRouter.post("/register", authController.registerUserController);
 authRouter.post("/login", authController.loginUserController);
 
 /**
- * @route Get /api/auth/logout
+ * @route GET /api/auth/logout
  * @desc clear token from user cookie and add token in blacklist
  * @access Public
  */
-authRouter.get("/logout");
+authRouter.get("/logout", authController.logoutUserController);
+
+/**
+ * @route GET /api/auth/get-me
+ * @desc get the current logged in user details
+ * @access Private
+ */
+authRouter.get(
+  "/get-me",
+  authMiddleware.authUser,
+  authController.getMeController,
+);
 
 module.exports = authRouter;
