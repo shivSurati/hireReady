@@ -13,8 +13,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // navigate("/register");
     await handleLogin({ email, password });
+    navigate("/");
   };
 
   if (loading) {
