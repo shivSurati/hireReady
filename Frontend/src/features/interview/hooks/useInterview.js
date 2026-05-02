@@ -27,21 +27,20 @@ export const useInterview = () => {
         resumeFile,
     }) => {
         setLoading(true);
-        let response = null;
         try {
-            response = await generateInterviewReport({
+            const response = await generateInterviewReport({
                 jobDescription,
                 selfDescription,
                 resumeFile,
             });
             setReport(response.interviewReport);
+            return response.interviewReport;
         } catch (error) {
             console.log(error);
+            return null;
         } finally {
             setLoading(false);
         }
-
-        return response.interviewReport;
     };
 
     const getReportById = async interviewId => {
@@ -97,6 +96,7 @@ export const useInterview = () => {
         if (interviewId) {
             getReportById(interviewId);
         } else {
+            setReport(null);
             getReports();
         }
     }, [interviewId]);

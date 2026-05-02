@@ -7,6 +7,7 @@ const Home = () => {
     const { loading, generateReport, reports } = useInterview();
     const [jobDescription, setJobDescription] = useState('');
     const [selfDescription, setSelfDescription] = useState('');
+    const [resumeFileName, setResumeFileName] = useState('');
     const resumeInputRef = useRef();
 
     const navigate = useNavigate();
@@ -16,9 +17,11 @@ const Home = () => {
         const data = await generateReport({
             jobDescription,
             selfDescription,
-            resumeFile,
+            resumeFile: resumeFile || null,
         });
-        navigate(`/interview/${data._id}`);
+        if (data && data._id) {
+            navigate(`/interview/${data._id}`);
+        }
     };
 
     if (loading) {
@@ -140,7 +143,9 @@ const Home = () => {
                                     </svg>
                                 </span>
                                 <p className="dropzone__title">
-                                    Click to upload or drag &amp; drop
+                                    {resumeFileName
+                                        ? resumeFileName
+                                        : 'Click to upload or drag & drop'}
                                 </p>
                                 <p className="dropzone__subtitle">
                                     PDF or DOCX (Max 5MB)
@@ -152,6 +157,10 @@ const Home = () => {
                                     id="resume"
                                     name="resume"
                                     accept=".pdf,.docx"
+                                    onChange={e => {
+                                        const file = e.target.files[0];
+                                        if (file) setResumeFileName(file.name);
+                                    }}
                                 />
                             </label>
                         </div>
