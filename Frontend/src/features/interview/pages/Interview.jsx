@@ -170,7 +170,17 @@ const Interview = () => {
                     </div>
                     <button
                         onClick={() => {
-                            getResumePdf(interviewId);
+                            if (
+                                import.meta.env.VITE_API_URL?.includes(
+                                    'localhost'
+                                )
+                            ) {
+                                getResumePdf(interviewId);
+                            } else {
+                                alert(
+                                    'Resume PDF download requires a paid server. Coming soon!'
+                                );
+                            }
                         }}
                         className="button primary-button"
                     >
