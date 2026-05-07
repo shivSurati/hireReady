@@ -21,21 +21,26 @@ You paste a job description and either upload your resume PDF or write a short s
 
 ## Screenshots
 
-### Home — Create your interview plan
+### Login Page
+![Login Page](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/login%20page.png)
 
-![Home Page]([./screenshots/home.png](https://github.com/shivSurati/hireReady/blob/d3cd9aa5e5fbb2b1f2b3963badb23297a76c6929/screenshots/login%20page.png))
+### Register Page
+![Register Page](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/register%20page.png)
 
-### Interview Report — Technical Questions
+### Home Page
+![Home Page](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/home%20page.png)
 
-![Technical Questions](./screenshots/technical.png)
+### Home Page with Data Filled
+![Home Page with Data](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/home%20page%20with%20data.png)
 
-### Interview Report — Behavioral Questions
+### Technical Questions
+![Technical Questions](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/technical%20questions.png)
 
-![Behavioral Questions](./screenshots/behavioral.png)
+### Behavioral Questions
+![Behavioral Questions](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/behavioral%20questions.png)
 
-### Interview Report — Preparation Roadmap
-
-![Roadmap](./screenshots/roadmap.png)
+### Live Deployed Version
+![Live Site](https://raw.githubusercontent.com/shivSurati/hireReady/main/screenshots/hireready-frontend.vercel.app_.png)
 
 ---
 
