@@ -23,7 +23,7 @@ You paste a job description and either upload your resume PDF or write a short s
 
 ### Home — Create your interview plan
 
-![Home Page](./screenshots/home.png)
+![Home Page]([./screenshots/home.png](https://github.com/shivSurati/hireReady/blob/d3cd9aa5e5fbb2b1f2b3963badb23297a76c6929/screenshots/login%20page.png))
 
 ### Interview Report — Technical Questions
 
